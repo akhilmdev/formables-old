@@ -1,10 +1,20 @@
 import React from 'react'
 
-import { ExampleComponent } from 'formables'
-import 'formables/dist/index.css'
+import Formables from 'formables'
+import { formData } from './formData';
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+
+  const onSubmit = (values: any) => {
+    console.log(values);
+    
+  }
+  return <Formables
+            onSubmit={onSubmit}
+            {...formData}
+            values={''}
+          />
+  return <div>testeesss</div>
 }
 
 export default App
