@@ -47,6 +47,24 @@ export const formData = {
           variants: "outlined",
           className: "selectStyle"
         },
+        {
+          fieldType: 'radio',
+          containerClassName: 'radioStyle',
+          label: 'gender',
+          name: 'gender',
+          id: 'gender',
+          type: 'Text',
+          validations: [{ type: "required", errorMessage: ["gender is required"] }],
+          helperText: 'çlick gender',
+          validationType: "string",
+          radioControls: [{
+            label: 'Male',
+            value: 'male'
+          },{
+            label: 'Female',
+            value: 'female'
+          }]
+      }
     ]
     
   }

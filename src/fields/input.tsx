@@ -18,12 +18,12 @@ export function Input(props: FieldsProps) {
         label={props.label}
         type={props.type}
         value={props?.formikProps?.values[props.id] || ''}
-        onChange={(e) => props?.formikProps?.handleChange(e)}
+        onChange={props?.formikProps?.handleChange}
         error={Boolean(props?.formikProps?.errors[props.name]) && props?.formikProps?.touched[props.name]}
         helperText={
           Boolean(props?.formikProps?.errors[props.name]) && props?.formikProps?.touched[props.name] ? props?.formikProps?.errors[props.name] : ''
         }
-        onBlur={(e) => props?.formikProps?.handleBlur(e)}
+        onBlur={props?.formikProps?.handleBlur}
         variant={props.variants}
         inputProps={setInputProps()}
       />

@@ -2,6 +2,7 @@ import { Input } from "./input";
 import React, { Fragment } from "react";
 import { SelectField } from "./select";
 import { Text } from "./text";
+import { RadioField } from "./radio";
 
 
 export function GenerateFields(props: any) {
@@ -20,6 +21,8 @@ export function GenerateFields(props: any) {
                         return <SelectField key={data.name + index} {...data} formikProps={formikProps}/>
                     case 'text':
                         return <Text key={data.name + index} {...data}/>
+                    case 'radio':
+                        return <RadioField key={data.name + index} {...data} formikProps={formikProps}/>
                     default:
                         return <Fragment />
                 }

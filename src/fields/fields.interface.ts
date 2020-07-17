@@ -64,3 +64,18 @@ export interface TextPropsInterface {
     component: React.ElementType<any>,
     textContent: string
 }
+
+export interface RadioProps {
+    containerClassName: string,
+    label: string,
+    formikProps: any,
+    name: string,
+    id: string,
+    helperText: string,
+    radioControls: Array<radioControl>
+}
+
+interface radioControl {
+    lable: string,
+    value: string | number | boolean
+}
