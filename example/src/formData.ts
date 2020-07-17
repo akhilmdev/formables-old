@@ -12,20 +12,40 @@ export const formData = {
             ],
             validationType: 'string',
             variants: "outlined",
-            className: "inputStyle"
+            className: "inputStyle",
+            value: ''
         },
         {
-            fieldType: 'input',
+            fieldType: 'text',
             id: 'name',
-            name: 'name',
-            label: 'Enter name',
-            type: 'string',
-            validations: [
-              { type: "required", errorMessage: "name is required" }
-            ],
-            validationType: 'string',
-            variants: "outlined",
-            className: "inputStyle"
+            variants: "h1",
+            containerClassName: "textStyle",
+            component: "h1",
+            textContent: "this is a test"
+        },
+        {
+          fieldType: 'select',
+          id: 'state',
+          name: 'state',
+          label: 'Departamento',
+          type: 'Text',
+          validations: [{ type: "required", errorMessage: ["state is required"] }],
+          validationType: "string",
+          value: null,
+          options: [{
+            label: "Ahuachapán",
+            value: 1
+         },
+         {
+            label: "Cabañas",
+            value: 2
+         },
+         {
+            label: "Chalatenango",
+            value: 3
+         }],
+          variants: "outlined",
+          className: "selectStyle"
         },
     ]
     

@@ -4,16 +4,6 @@ import { TextField } from "@material-ui/core";
 
 
 export function Input(props: FieldsProps) {
-
-  const onChange = (props: any) => {
-    console.log(props);
-  }
-
-  const handleBlur = (props: any) => {
-    console.log(props);
-
-  }
-
   const setInputProps = () => {
     return {
       maxLength: props.maxLength
@@ -21,19 +11,19 @@ export function Input(props: FieldsProps) {
   }
 
   return (
-    <div className={props.className}>
+    <div className={props.containerClassName}>
       <TextField
-        id={props.name}
+        id={props.id}
         name={props.name}
         label={props.label}
         type={props.type}
-        value={props.value || ''}
-        onChange={onChange}
-        error={Boolean(props.errors[props.name]) && props.touched[props.name]}
+        value={props?.formikProps?.values[props.id] || ''}
+        onChange={(e) => props?.formikProps?.handleChange(e)}
+        error={Boolean(props?.formikProps?.errors[props.name]) && props?.formikProps?.touched[props.name]}
         helperText={
-          Boolean(props.errors[props.name]) && props.touched[props.name] ? props.errors[props.name] : ''
+          Boolean(props?.formikProps?.errors[props.name]) && props?.formikProps?.touched[props.name] ? props?.formikProps?.errors[props.name] : ''
         }
-        onBlur={handleBlur}
+        onBlur={(e) => props?.formikProps?.handleBlur(e)}
         variant={props.variants}
         inputProps={setInputProps()}
       />

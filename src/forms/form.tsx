@@ -5,14 +5,13 @@ import { IProps } from "./form.interface";
 import { GenerateFields } from "../fields/generateFields";
 
 
-
 class Formables extends Component<IProps> {
 
     getInitValue = (): {} => {
         const value = {};
         if (this.props.fields) {
             this.props.fields.forEach((data) => {
-                value[data.name] = this.props.values[data.name];
+                value[data.name] = data.value;
             });
         }
         return { ...value };
@@ -34,16 +33,16 @@ class Formables extends Component<IProps> {
     render(): ReactElement {
         return (
             <Formik
-                initialValues={{email: ''}}//{this.getInitValue()}
+                initialValues={this.getInitValue()}
                 validationSchema={this.validationSchema()}
                 onSubmit={this.submit}
                 enableReinitialize={true}
             >
                 {formikProps => {
-                    const { handleSubmit } = formikProps;
+                    const { handleSubmit, handleChange } = formikProps;
                     return (
                         <form onSubmit={handleSubmit}>
-                            <GenerateFields {...this.props} {...formikProps} />
+                            <GenerateFields {...this.props} formikProps={formikProps} handleChange={handleChange}/>
                         </form>
                     );
                 }}
