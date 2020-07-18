@@ -1,3 +1,5 @@
+import { ElementType } from "react";
+
 export interface FieldsProps {
     fieldType: 'input' | 'select' | 'radio' | 'maskInput',
     id: string,
@@ -78,4 +80,32 @@ export interface RadioProps {
 interface radioControl {
     lable: string,
     value: string | number | boolean
+}
+
+// sider 
+
+export interface SliderPropsInterface {
+    id: string,
+    name: string,
+    label: string,
+    disabled?: boolean,
+    defaultValue?: number | Array<number>,
+    formikProps: any,
+    step?: number,
+    marks?: boolean | Array<MarkInterface>,
+    valueLabelDisplay?: 'on' | 'auto' | 'off',
+    max?: number,
+    min?: number,
+    track?: 'normal' | false | 'inverted',
+    orientation?: 'horizontal' | 'vertical',
+    scale?: Function,
+    getAriaLabel?: Function,
+    getAriaValueText?: Function,
+    valueLabelFormat?: Function,
+    ThumbComponent: ElementType
+}
+
+interface MarkInterface {
+    value: number,
+    label: string
 }

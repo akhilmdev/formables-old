@@ -1,8 +1,9 @@
 import { Input } from "./input";
-import React, { Fragment } from "react";
+import React from "react";
 import { SelectField } from "./select";
 import { Text } from "./text";
 import { RadioField } from "./radio";
+import { SliderFlield } from "./slider";
 
 
 export function GenerateFields(props: any) {
@@ -23,8 +24,10 @@ export function GenerateFields(props: any) {
                         return <Text key={data.name + index} {...data}/>
                     case 'radio':
                         return <RadioField key={data.name + index} {...data} formikProps={formikProps}/>
+                    case 'slider':
+                        return <SliderFlield key={data.name + index} {...data} formikProps={formikProps} />
                     default:
-                        return <Fragment />
+                        return <div>No element found</div>
                 }
             })
             }
