@@ -97,7 +97,18 @@ export const formData = {
       size: 'small',
       value: false,
       containerClassName: 'switchStyle'
-    }
+    },
+    {
+      fieldType: 'checkbox',
+      checked: false,
+      name: 'checkbox',
+      color: 'default',
+      disabled: false,
+      containerClassName: 'checkboxStyle',
+      id: 'checkbox',
+      size: 'medium',
+      label: 'checkbox'
+  }
   ]
 
 }

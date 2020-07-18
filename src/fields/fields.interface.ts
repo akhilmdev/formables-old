@@ -124,3 +124,17 @@ export interface SwitchPropsInterface {
     value: boolean,
     containerClassName: string
 }
+
+// checkbox
+
+export interface CheckBoxFieldInterface {
+    checked: boolean,
+    formikProps: any,
+    name: string,
+    color?: 'default' | 'primary' | 'secondary',
+    disabled?: boolean,
+    containerClassName?: string,
+    id: string,
+    size: 'medium' | 'small',
+    label: string
+}
