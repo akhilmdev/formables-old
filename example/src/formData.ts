@@ -12,7 +12,7 @@ export const formData = {
       ],
       validationType: 'string',
       variants: "outlined",
-      className: "inputStyle",
+      containerClassName: "inputStyle",
       value: ''
     },
     {
@@ -45,7 +45,7 @@ export const formData = {
         value: 3
       }],
       variants: "outlined",
-      className: "selectStyle"
+      containerClassName: "selectStyle"
     },
     {
       fieldType: 'radio',
@@ -73,7 +73,7 @@ export const formData = {
       disabled: false,
       value: [6, 7],
       step: 1,
-      marks: [{value: 5, label: 'mid'}],
+      marks: [{ value: 5, label: 'mid' }],
       valueLabelDisplay: 'on',
       max: 10,
       min: 0,
@@ -85,6 +85,18 @@ export const formData = {
       // getAriaValueText?: Function,
       // valueLabelFormat?: Function,
       // ThumbComponent: ElementType
+    },
+    {
+      fieldType: 'switch',
+      checked: false,
+      color: 'default',
+      disabled: false,
+      id: 'switch',
+      name: 'switch',
+      label: 'switch',
+      size: 'small',
+      value: false,
+      containerClassName: 'switchStyle'
     }
   ]
 

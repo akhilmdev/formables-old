@@ -109,3 +109,18 @@ interface MarkInterface {
     value: number,
     label: string
 }
+
+//switch
+
+export interface SwitchPropsInterface {
+    checked: boolean,
+    color: 'default' | 'primary' | 'secondary',
+    disabled: boolean,
+    id: string,
+    name: string,
+    label: string,
+    formikProps: any,
+    size: 'medium' | 'small',
+    value: boolean,
+    containerClassName: string
+}

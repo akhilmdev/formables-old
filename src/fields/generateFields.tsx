@@ -4,6 +4,7 @@ import { SelectField } from "./select";
 import { Text } from "./text";
 import { RadioField } from "./radio";
 import { SliderFlield } from "./slider";
+import { SwitchField } from "./switch";
 
 
 export function GenerateFields(props: any) {
@@ -26,6 +27,8 @@ export function GenerateFields(props: any) {
                         return <RadioField key={data.name + index} {...data} formikProps={formikProps}/>
                     case 'slider':
                         return <SliderFlield key={data.name + index} {...data} formikProps={formikProps} />
+                    case 'switch':
+                        return <SwitchField key={data.name + index} {...data} formikProps={formikProps} />
                     default:
                         return <div>No element found</div>
                 }
